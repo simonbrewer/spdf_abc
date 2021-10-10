@@ -28,7 +28,7 @@ log_mod_fixed <- function(t, X0, r, K) {
   return(data.frame(t,X))
 }
 
-log_mod_dyn <- function(t, X0, r, K) {
+log_mod_dyn <- function(t, X0, r, K, noise = FALSE, sigma) {
   
   if (length(K) < 2) {stop("K is a single value")}
   
@@ -38,7 +38,11 @@ log_mod_dyn <- function(t, X0, r, K) {
   
   for (i in 2:nt) {
     dX <- r * (1 - (X[(i-1)] / K[i])) * X[(i - 1)]
-    X[i] <- X[(i-1)] + dX
+    if (noise) {
+      X[i] <- X[(i-1)] + dX + rnorm(1, 0, sigma)
+    } else {
+      X[i] <- X[(i-1)] + dX
+    }
   }
 
   return(X)
