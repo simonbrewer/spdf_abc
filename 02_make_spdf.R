@@ -43,3 +43,5 @@ spdf_fac <- 0.001 ## 0.1% of people leave a trace
 dat$spdf <- dat$P * spdf_fac
 plot(dat$t, dat$spdf)
 # plot(dat$t, dat$AT)
+
+write.csv(dat, "./data/test_spdf.csv", row.names = FALSE)
