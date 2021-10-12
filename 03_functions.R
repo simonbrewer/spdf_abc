@@ -15,7 +15,7 @@ clim_k_mod <- function(clim, min_clim, max_clim, min_K, max_K)
       ## clim proportion
       clim_prop <- (clim - min_clim) / clim_range
       ## K_prop
-      K = min_K + (K_range * clim_prop)
+      K <- min_K + (K_range * clim_prop)
     }
   }
   return(K)

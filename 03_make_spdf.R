@@ -1,6 +1,6 @@
 ## Derive a population curve from the Trace data
 set.seed(42)
-source("00_functions.R")
+source("03_functions.R")
 
 dat <- read.csv("./data/AGU_Bonneville_cSPD_T21KClim.csv")
 
