@@ -28,7 +28,7 @@ log_mod_fixed <- function(t, X0, r, K) {
   return(data.frame(t,X))
 }
 
-log_mod_dyn <- function(t, X0, r, K, noise = FALSE, sigma) {
+log_mod_dyn <- function(t, X0, r, K, noise = FALSE, sigma = 1) {
   
   if (length(K) < 2) {stop("K is a single value")}
   
